@@ -10,8 +10,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run build",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run test"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "main": "dist/index.js",
