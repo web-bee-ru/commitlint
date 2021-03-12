@@ -10,8 +10,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validate = void 0;
 var conventional_commits_parser_1 = __importDefault(require("conventional-commits-parser"));
+var DEFAULT_COMMIT_TYPES = [
+    "feat",
+    "fix",
+    "wip",
+    "ci",
+    "chore", // @NOTE: should be moved in the starter-project
+];
 function validate(message, params) {
     var issuePrefixes = params.issuePrefixes, commitTypes = params.commitTypes;
+    if (!issuePrefixes) {
+        issuePrefixes = [];
+    }
+    if (!commitTypes) {
+        commitTypes = DEFAULT_COMMIT_TYPES.slice();
+    }
     // https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-commits-parser
     var commit = conventional_commits_parser_1.default.sync(message, {
         mergePattern: /^Merge (.*)$/,
