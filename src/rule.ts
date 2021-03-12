@@ -2,15 +2,29 @@
 
 export type CommitMessage = string;
 export type RuleParams = {
-  commitTypes: string[];
-  issuePrefixes: string[];
+  commitTypes?: string[];
+  issuePrefixes?: string[];
 };
+
+const DEFAULT_COMMIT_TYPES = [
+  "feat", // @NOTE: implementation of functionality
+  "fix", // @NOTE: bugfix
+  "wip", // @NOTE: work in progress
+  "ci", // @NOTE: continuous integration related issues
+  "chore", // @NOTE: should be moved in the starter-project
+];
 
 export function validate(
   message: CommitMessage,
   params: RuleParams
 ): [boolean, string] {
-  const { issuePrefixes, commitTypes } = params;
+  let { issuePrefixes, commitTypes } = params;
+  if (!issuePrefixes) {
+    issuePrefixes = [];
+  }
+  if (!commitTypes) {
+    commitTypes = DEFAULT_COMMIT_TYPES.slice();
+  }
   // https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-commits-parser
   const commit = conventionalCommitsParser.sync(message, {
     mergePattern: /^Merge (.*)$/,
