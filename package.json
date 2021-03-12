@@ -1,10 +1,11 @@
 {
   "name": "@web-bee-ru/commitlint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shareable commitlint config used by web-bee.ru",
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
     "check-message": "echo ci: test message | npx commitlint",
+    "publish": "npm publish --access public",
     "test": "jest"
   },
   "husky": {
@@ -15,8 +16,8 @@
     }
   },
   "main": "dist/index.js",
-  "repository": "web-bee-ru/eslint-plugin",
-  "homepage": "https://github.com/web-bee-ru/eslint-plugin",
+  "repository": "web-bee-ru/commitlint-config",
+  "homepage": "https://github.com/web-bee-ru/commitlint-config",
   "author": "dev@web-bee.ru",
   "license": "ISC",
   "publishConfig": {
