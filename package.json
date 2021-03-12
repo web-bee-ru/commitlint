@@ -1,5 +1,5 @@
 {
-  "name": "TODO",
+  "name": "@web-bee-ru/commitlint-config",
   "version": "1.0.0",
   "description": "Shareable commitlint config used by web-bee.ru",
   "scripts": {
@@ -14,12 +14,16 @@
       "pre-push": "npm run test"
     }
   },
-  "main": "index.js",
-  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": "web-bee-ru/eslint-plugin",
+  "homepage": "https://github.com/web-bee-ru/eslint-plugin",
+  "author": "dev@web-bee.ru",
+  "license": "ISC",
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
     "@commitlint/lint": "^12.0.1",
     "@commitlint/types": "^12.0.1",
     "@types/conventional-commits-parser": "^3.0.1",
@@ -30,7 +34,6 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "@commitlint/cli": "^12.0.1",
     "conventional-commits-parser": "^3.2.1"
   }
 }
