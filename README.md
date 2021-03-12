@@ -1,47 +1,46 @@
-# @rocketseat/commitlint-config
+# @web-bee-ru/commitlint-config
 
-<p>
-  <img src="https://img.shields.io/npm/v/@rocketseat/commitlint-config?style=flat-square&color=8257E5&labelColor=121214" alt="npm version" />
-  <img alt="License" src="https://img.shields.io/github/license/rocketseat/commitlint-config?style=flat-square&color=8257E5&labelColor=121214">
-</p>
-
-Shareable [`commitlint`](https://github.com/conventional-changelog/commitlint) config used by Rocketseat.
+Configurable [`commitlint`](https://github.com/conventional-changelog/commitlint) config used by https://web-bee.ru/.
 
 ## Install
 
-You can install it with npm or Yarn.
-
 ```sh
 # npm
-npm i -D @rocketseat/commitlint-config @commitlint/cli
-
-# Yarn
-yarn add -D @rocketseat/commitlint-config @commitlint/cli
+npm i -D @web-bee-ru/commitlint-config @commitlint/cli
 ```
 
-## Usage
+## Configure
 
-After installing it, apply the config to `commitlint` by running the following command:
+After installing it, add `commitlint.config.js` into root of your project:
 
-```sh
-echo "module.exports = { extends: ['@rocketseat/commitlint-config'] };" > .commitlintrc.js
+```js
+// commitlint.config.js
+const makeConfig = require("@web-bee-ru/commitlint-config");
+
+module.exports = makeConfig({
+  // issuePrefixes: ["EXAMPLE-"],
+  // @NOTE: uncomment to override defaults:
+  // commitTypes: [
+  //   "feat", // @NOTE: implementation of functionality
+  //   "fix", // @NOTE: bugfix
+  //   "wip", // @NOTE: work in progress
+  //   "ci", // @NOTE: continuous integration related issues
+  //   "chore", // @NOTE: should be moved in the starter-project
+  // ],
+});
+
 ```
 
-## Bonus
+## Automate
 
 To lint commits before they are created, install Husky and use the 'commit-msg' hook.
 
 ```sh
 # Npm
-npm i -D husky
-
-# Yarn
-yarn add -D husky
+npm i -D husky@4
 ```
 
 After that, you can create a `.huskyrc` file or add to your `package.json` the following code for
-
-Husky v4:
 
 ```json
 {
@@ -52,22 +51,3 @@ Husky v4:
   }
 }
 ```
-
-Husky v5:
-
-```
-# .husky/commit-msg
-# ...
-npx --no-install commitlint --edit $1
-# or
-yarn commitlint --edit $1
-```
-
-## Version Support
-
-- Node.js [LTS](https://github.com/nodejs/LTS#lts-schedule) `>= 10.21.0`
-- git `>= 2.13.2`
-
-## License
-
-MIT License © [Rocketseat](https://github.com/Rocketseat)
