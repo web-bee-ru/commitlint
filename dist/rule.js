@@ -15,7 +15,14 @@ var DEFAULT_COMMIT_TYPES = [
     "fix",
     "wip",
     "ci",
-    "chore", // @NOTE: should be moved in the starter-project
+    "chore",
+    "build",
+    "refactor",
+    "docs",
+    "perf",
+    "style",
+    "deps",
+    "test", // @NOTE: tests
 ];
 function validate(message, params) {
     var issuePrefixes = params.issuePrefixes, commitTypes = params.commitTypes;
