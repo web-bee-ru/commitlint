@@ -10,6 +10,7 @@ test("good-messages", async () => {
   const messages = [
     "ci: hello, world", // anti-prettier
     "GOOD-123: hello, world", // anti-prettier
+    "refactor(sfc/style-vars): divide main function", // anti-prettier
   ];
   for (let message of messages) {
     const result = await lint(message);
@@ -29,6 +30,7 @@ test("bad-type", async () => {
     "CI: hello, world", // wrong casing
     "ci:hello, world", // space required
     "ci - hello, world", // wrong delimeter
+    "ci(: hello, world", // wrong parentheses
   ];
   for (let message of messages) {
     const result = await lint(message);
