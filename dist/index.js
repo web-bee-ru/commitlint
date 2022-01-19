@@ -29,7 +29,7 @@ module.exports = function index(params) {
                 rules: {
                     "local-plugin": function (_a) {
                         var raw = _a.raw;
-                        return rule_1.validate(raw, params);
+                        return (0, rule_1.validate)(raw, params);
                     },
                 },
             },
