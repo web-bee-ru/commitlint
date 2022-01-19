@@ -31,6 +31,7 @@ export function validate(
     revertPattern: /^Revert (.*)$/,
     issuePrefixes: issuePrefixes,
     issuePrefixesCaseSensitive: true,
+    referenceActions: null,
   });
   const refs = commit.references;
   const type = commit.type;

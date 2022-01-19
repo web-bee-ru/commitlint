@@ -35,6 +35,7 @@ function validate(message, params) {
         revertPattern: /^Revert (.*)$/,
         issuePrefixes: issuePrefixes,
         issuePrefixesCaseSensitive: true,
+        referenceActions: null,
     });
     var refs = commit.references;
     var type = commit.type;

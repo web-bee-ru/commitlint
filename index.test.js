@@ -53,3 +53,14 @@ test("bad-issue-type", async () => {
     expect(result.valid, message).toBe(false);
   }
 });
+
+test("referenced-word-inside-message", async () => {
+  const messages = [
+    "GOOD-123: Add eslint autofix config", // "fix" inside message
+    "fix: smth autofix config", // "fix" inside message
+  ];
+  for (let message of messages) {
+    const result = await lint(message);
+    expect(result.valid, message).toBe(true);
+  }
+});
