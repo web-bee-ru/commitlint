@@ -37,10 +37,40 @@ To lint commits before they are created, install Husky and use the 'commit-msg' 
 
 ```sh
 # Npm
-npm i -D husky@4
+npm i -D husky@7
 ```
 
-After that, you can create a `.huskyrc` file or add to your `package.json` the following code for
+### husky v6/v7
+
+Initialize husky
+
+```sh
+# Npm
+npx husky-init
+```
+
+Add script to package.json
+
+```json
+{
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
+```
+
+Create `.husky/commit-msg` hook file
+
+```sh
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx commitlint --edit $1
+```
+
+### husky v4 (legacy)
+
+You can create a `.huskyrc` file or add to your `package.json` the following code for
 
 ```json
 {
