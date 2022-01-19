@@ -5,7 +5,6 @@
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
     "check-message": "echo ci: test message | npx commitlint",
-    "publish": "npm publish --access public",
     "test": "jest",
     "prepare": "husky install"
   },
