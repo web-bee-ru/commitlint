@@ -18,7 +18,6 @@ After installing it, add `commitlint.config.js` into root of your project:
 const makeConfig = require("@web-bee-ru/commitlint-config");
 
 module.exports = makeConfig({
-  // issuePrefixes: ["EXAMPLE-"],
   // @NOTE: uncomment to override defaults:
   // commitTypes: [
   //   "feat", // @NOTE: implementation of functionality
