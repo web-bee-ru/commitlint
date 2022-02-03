@@ -20,14 +20,15 @@
     "@commitlint/cli": "^16.0.2",
     "@commitlint/lint": "^16.0.0",
     "@commitlint/types": "^16.0.0",
-    "@types/conventional-commits-parser": "^3.0.2",
     "husky": "^7.0.0",
     "jest": "^26.6.3",
     "jest-expect-message": "^1.0.2",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "@commitlint/load": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0"
   },
-  "dependencies": {
-    "conventional-commits-parser": "^3.2.4"
+  "peerDependencies": {
+    "@commitlint/config-conventional": ">=13.0.0"
   }
 }
