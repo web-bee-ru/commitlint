@@ -1,7 +1,6 @@
 ﻿const makeConfig = require("./dist");
 
 module.exports = makeConfig({
-  issuePrefixes: ["GOOD-"],
   commitTypes: [
     "feat", // @NOTE: implementation of functionality
     "fix", // @NOTE: bugfix
