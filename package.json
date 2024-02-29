@@ -1,6 +1,6 @@
 {
   "name": "@web-bee-ru/commitlint-config",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Shareable commitlint config used by web-bee.ru",
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
